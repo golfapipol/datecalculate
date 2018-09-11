@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "48746324-bdc8-4128-b4e8-e6c31dcd8d26",
+		"name": "date-calculate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "input from 01/01/2018 to 11/09/2018 should be 253 days",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "14915070-bc63-4e19-9258-d417047f3975",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"duration should be 253 days\", function () {",
+							"    pm.response.to.have.body(\"253 days\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/duration?startDay=01&endDay=11&startMonth=01&startYear=2018&endMonth=09&endYear=2018",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"duration"
+					],
+					"query": [
+						{
+							"key": "startDay",
+							"value": "01"
+						},
+						{
+							"key": "endDay",
+							"value": "11"
+						},
+						{
+							"key": "startMonth",
+							"value": "01"
+						},
+						{
+							"key": "startYear",
+							"value": "2018"
+						},
+						{
+							"key": "endMonth",
+							"value": "09"
+						},
+						{
+							"key": "endYear",
+							"value": "2018"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
